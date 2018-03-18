@@ -1,0 +1,9 @@
+{
+  "autoload": {
+    "classmap": [
+      "src/PDO/Database.php",
+      "src/User.php",
+      "src/UserNew.php"
+    ]
+  }
+}
