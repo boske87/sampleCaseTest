@@ -1,8 +1,6 @@
 <?php
 require "../vendor/autoload.php";
 
-
-
 use Src\PDO\Database;
 use Src\User;
 use Src\UserNew;
