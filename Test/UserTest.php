@@ -22,6 +22,14 @@ class UserTest extends TestCase
         $this->assertEquals(array('ROLE_ADMIN'), $user->getRoles());
     }
 
+    public function testIsUserAccountNonLocked()
+    {
+        $user = new User('goran', 'adminpass');
+        $this->assertTrue($user->isUserAccountNonLocked());
+        $user = new User('goran', 'adminpass', array(), true, true);
+        $this->assertFalse($user->isUserAccountNonLocked());
+    }
+
     public function testGetPassword()
     {
         $user = new User('fabien', 'superpass');

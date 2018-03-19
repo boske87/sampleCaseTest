@@ -16,6 +16,7 @@ class User
     private $mail;
     private $createTime;
     private $userId;
+    private $userAccountNonLocked;
 
 
     /**
@@ -27,7 +28,7 @@ class User
      * @param null|string $userType
      * @param null|string $userGroup
      */
-    public function __construct(?string $username, ?string $password, array $roles = array(), bool $enabled = true)
+    public function __construct(?string $username, ?string $password, array $roles = array(), bool $enabled = true, bool $userAccountNonLocked = true)
     {
         if ('' === $username || null === $username) {
             throw new \InvalidArgumentException('The username cannot be empty.');
@@ -36,6 +37,7 @@ class User
         $this->password = $password;
         $this->enabled = $enabled;
         $this->roles = $roles;
+        $this->userAccountNonLocked = $userAccountNonLocked;
     }
 
     /**
@@ -132,6 +134,12 @@ class User
      */
     public function getCreateTime(): DateTimeImmutable {
         return $this->createTime;
+    }
+
+
+    public function isUserAccountNonLocked()
+    {
+        return $this->userAccountNonLocked;
     }
 
 }

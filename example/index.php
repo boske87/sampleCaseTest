@@ -10,8 +10,10 @@ $sql = new Database('host', 'db', 'user', 'pass');
 
 $user = new User('goran', 'adminpass');
 
+$user->getRoles();
+
 $userNew = new UserNew($sql);
 
-$user->getRoles();
+
 
 
